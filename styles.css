@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #FFFED6;
+  height: 400vh;
+}
+
+main #welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-family: "Anton", sans-serif;
+  height: 100vh;
+  margin: 0 10%;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes righttoleft {
+  0% {
+    transform: translateX(5rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes bottomtoTop {
+  0% {
+    transform: translateY(5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes replacing {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100);
+  }
+}
+main #welcome h2 {
+  color: #595959;
+  font-size: 3rem;
+  animation: righttoleft 1s ease-in-out forwards, fadeIn 1s ease-in forwards, replacing 1s ease-in forwards 2s;
+}
+main #welcome #wfcontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  animation: bottomtoTop 0.85s ease-in forwards, fadeIn 1s ease-in forwards, replacing 1s ease-in forwards 2s;
+}
+main #welcome #wfcontainer h1 {
+  color: #FD4A4A;
+  font-size: 6rem;
+  text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+}
+main #welcome #wfcontainer #devcontainer {
+  padding: 1rem 2rem;
+  background-color: #595959;
+  align-self: flex-end;
+  border-radius: 1rem;
+  animation: replacing 1s ease-in forwards 2s;
+}
+main #welcome #wfcontainer #devcontainer p {
+  color: #FFFED6;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+}
+
+/*# sourceMappingURL=styles.css.map */
