@@ -67,50 +67,63 @@ body{
 }
 
 main{
-    #welcome{
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        gap: 1rem;
-        font-family: "Anton", sans-serif;
-        h2{
-            color: #595959;
-            font-size: 3rem;
-            animation: 
-            righttoleft 1s ease-in-out forwards,
-            fadeIn 1s ease-in forwards,
-            replacingWC 1s ease-in forwards 1.8s;
-        }
-        #wfcontainer{
+    #menu{
+        #welcome{
             display: flex;
             flex-direction: column;
-            gap: .5rem;
-            width: fit-content;
-            animation: 
-            bottomtoTop 0.85s ease-in forwards,
-            fadeIn 1s ease-in forwards;
-            h1{
-                color: #FD4A4A;
-                font-size: 6rem;
-                text-shadow: 0px 3px 3px rgba(0,0,0,0.25);
-                animation: replacingWCName 1s ease-in forwards 2s;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            gap: 1rem;
+            font-family: "Anton", sans-serif;
+            h2{
+                color: #595959;
+                font-size: 3rem;
+                animation: 
+                righttoleft 1s ease-in-out forwards,
+                fadeIn 1s ease-in forwards,
+                replacingWC 1s ease-in forwards 1.8s;
             }
-            #devcontainer{
-                padding: 1rem 2rem;
-                background-color: #595959;
-                align-self: flex-end;
-                border-radius: 1rem;
-                animation: replacingWCDev 1.3s ease-in forwards 2.2s;
-                p{
-                    color:#FFFED6;
-                    font-size: 1rem;
-                    letter-spacing: .1em;
+            #wfcontainer{
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+                width: fit-content;
+                animation: 
+                bottomtoTop 0.85s ease-in forwards,
+                fadeIn 1s ease-in forwards;
+                h1{
+                    color: #FD4A4A;
+                    font-size: 6rem;
+                    text-shadow: 0px 3px 3px rgba(0,0,0,0.25);
+                    animation: replacingWCName 1s ease-in forwards 2s;
+                }
+                #devcontainer{
+                    padding: 1rem 2rem;
+                    background-color: #595959;
+                    align-self: flex-end;
+                    border-radius: 1rem;
+                    animation: replacingWCDev 1.3s ease-in forwards 2.2s;
+                    p{
+                        color:#FFFED6;
+                        font-size: 1rem;
+                        letter-spacing: .1em;
+                    }
+                }
+            }
+        }
+        #fotoWendel{
+            position: absolute;
+            margin: 0 auto;
+            #fotocontainer{
+                border-radius: 10rem;
+                background-color: black;
+                width: fit-content;
+    
+                img{
+                    height: 10rem;
                 }
             }
         }
     }
-
 }
