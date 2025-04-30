@@ -7,7 +7,7 @@ body{
     height: 400vh
 }
 
-
+// Ajustar a centralização da foto com o texto após a animação
 @keyframes fadeIn{
     0% { 
         opacity: 0;
@@ -34,46 +34,59 @@ body{
 }
 @keyframes replacingWC {
     0%{
-        transform: translateX(0);
-    }
-    90%{
-        transform: translateX(-22.5rem);
+        transform: translateX(50rem);
     }
     100% {
-        transform: translateX(-22rem);
+        transform: translateX(50rem);
     }
 }
 @keyframes replacingWCName {
-    0%{
-        transform: translateX(0);
-    }
-    90%{
-        transform: translateX(-23.5rem);
-    }
     100% {
-        transform: translateX(-23rem);
+        transform: translateX(0);
     }
 }
 @keyframes replacingWCDev {
-    0%{
-        transform: translateX(0);
+    100% {
+        transform: translateX(-18.7rem);
     }
-    90%{
-        transform: translateX(-42rem);
+}
+@keyframes showPhoto {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+        transform: translateX(0);
+        transform: translatey(5rem);
+    }
+    70%{
+        opacity: .5;
+        transform: translatey(-1rem);
     }
     100% {
-        transform: translateX(-41.5rem);
+        opacity: 1;
+        transform: translatey(0rem);
     }
 }
 
 main{
     #menu{
+        display: grid;
+        place-items: center;
+        align-items: center;
+        grid-template-rows: 95% 5%;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "welcome foto"
+        "scrollmsg scrollmsg"
+        ;
+        height: 100vh;
         #welcome{
+            grid-area: welcome;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
             gap: 1rem;
             font-family: "Anton", sans-serif;
             h2{
@@ -102,8 +115,7 @@ main{
                     padding: 1rem 2rem;
                     background-color: #595959;
                     align-self: flex-end;
-                    border-radius: 1rem;
-                    animation: replacingWCDev 1.3s ease-in forwards 2.2s;
+                    border-radius: 1rem;                        animation: replacingWCDev 1.3s ease-in forwards 2.2s;
                     p{
                         color:#FFFED6;
                         font-size: 1rem;
@@ -113,17 +125,103 @@ main{
             }
         }
         #fotoWendel{
-            position: absolute;
-            margin: 0 auto;
+            grid-area: foto;
             #fotocontainer{
-                border-radius: 10rem;
-                background-color: black;
-                width: fit-content;
-    
+                display: flex;
+                justify-content: center;
+                overflow: hidden;
+                border-radius: 5rem;
+                background-color: none;
+                height: 28rem;
+                width: 20rem;
+                opacity: 0;
+                animation: showPhoto 1s linear forwards 2s;
                 img{
-                    height: 10rem;
+                    height: 25rem;
+                    }
                 }
+        }
+        #scrollMessage{
+            grid-area: scrollmsg;
+        }
+    }
+    
+    /*#menu{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        #opening{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            #welcome{
+                grid-area: welcome;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                gap: 1rem;
+                font-family: "Anton", sans-serif;
+                h2{
+                    color: #595959;
+                    font-size: 3rem;
+                    animation: 
+                    righttoleft 1s ease-in-out forwards,
+                    fadeIn 1s ease-in forwards,
+                    replacingWC 1s ease-in forwards 1.8s;
+                }
+                #wfcontainer{
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5rem;
+                    width: fit-content;
+                    animation: 
+                    bottomtoTop 0.85s ease-in forwards,
+                    fadeIn 1s ease-in forwards;
+                    h1{
+                        color: #FD4A4A;
+                        font-size: 6rem;
+                        text-shadow: 0px 3px 3px rgba(0,0,0,0.25);
+                        animation: replacingWCName 1s ease-in forwards 2s;
+                    }
+                    #devcontainer{
+                        padding: 1rem 2rem;
+                        background-color: #595959;
+                        align-self: flex-end;
+                        border-radius: 1rem;
+                        animation: replacingWCDev 1.3s ease-in forwards 2.2s;
+                        p{
+                            color:#FFFED6;
+                            font-size: 1rem;
+                            letter-spacing: .1em;
+                        }
+                    }
+                }
+            }
+            #fotoWendel{
+                grid-area: foto;
+                position: absolute;
+                #fotocontainer{
+                    display: flex;
+                    justify-content: center;
+                    overflow: hidden;
+                    border-radius: 5rem;
+                    background-color: none;
+                    height: 28rem;
+                    width: 20rem;
+                    margin-left: 100%;
+                    opacity: 0;
+                    animation: showPhoto 1s linear forwards 2s;
+                    img{
+                        height: 25rem;
+                    }
+                }
+            }
+            #scrollMessage{
+                grid-area: scrollmsg;
             }
         }
     }
+        */
 }
