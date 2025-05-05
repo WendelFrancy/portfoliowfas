@@ -70,15 +70,18 @@ body {
   }
 }
 main #menu {
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  grid-template-rows: 95% 5%;
-  grid-template-areas: "welcome foto" "scrollmsg scrollmsg";
+  flex-direction: column;
   height: 100vh;
 }
-main #menu #welcome {
-  grid-area: welcome;
+main #menu #menuinfos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main #menu #menuinfos #welcome {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -86,40 +89,40 @@ main #menu #welcome {
   gap: 1rem;
   font-family: "Anton", sans-serif;
 }
-main #menu #welcome h2 {
+main #menu #menuinfos #welcome h2 {
   color: #595959;
   font-size: 3rem;
   animation: righttoleft 1s ease-in-out forwards, fadeIn 1s ease-in forwards, replacingWC 1s ease-in forwards 1.8s;
 }
-main #menu #welcome #wfcontainer {
+main #menu #menuinfos #welcome #wfcontainer {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   width: fit-content;
   animation: bottomtoTop 0.85s ease-in forwards, fadeIn 1s ease-in forwards;
 }
-main #menu #welcome #wfcontainer h1 {
+main #menu #menuinfos #welcome #wfcontainer h1 {
   color: #fd4a4a;
   font-size: 6rem;
   text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
   animation: replacingWCName 1s ease-in forwards 2s;
 }
-main #menu #welcome #wfcontainer #devcontainer {
+main #menu #menuinfos #welcome #wfcontainer #devcontainer {
   padding: 1rem 2rem;
   background-color: #595959;
   align-self: flex-end;
   border-radius: 1rem;
   animation: replacingWCDev 1.3s ease-in forwards 2.2s;
 }
-main #menu #welcome #wfcontainer #devcontainer p {
+main #menu #menuinfos #welcome #wfcontainer #devcontainer p {
   color: #fffed6;
   font-size: 1rem;
   letter-spacing: 0.1em;
 }
-main #menu #fotoWendel {
-  grid-area: foto;
+main #menu #menuinfos #fotoWendel {
+  position: absolute;
 }
-main #menu #fotoWendel #fotocontainer {
+main #menu #menuinfos #fotoWendel #fotocontainer {
   display: flex;
   justify-content: center;
   overflow: hidden;
@@ -130,11 +133,11 @@ main #menu #fotoWendel #fotocontainer {
   opacity: 0;
   animation: showPhoto 1s linear forwards 2s;
 }
-main #menu #fotoWendel #fotocontainer img {
+main #menu #menuinfos #fotoWendel #fotocontainer img {
   height: 25rem;
 }
 main #menu #scrollMessage {
-  grid-area: scrollmsg;
+  align-self: flex-end;
 }
 
 /*# sourceMappingURL=styles.css.map */
